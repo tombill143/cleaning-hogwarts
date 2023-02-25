@@ -2,205 +2,205 @@ const students = [
   {
     fullname: "Pansy parkinson",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/parkinson_p.png",
     house: "slytherin",
   },
   {
     fullname: "hannah Abbott",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/abbott_h.png",
     house: "Hufflepuff",
   },
   {
     fullname: "Susan bones",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/bones_s.png",
     house: "hufflepuff",
   },
   {
     fullname: "Justin Finch-Fletchley",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/fletchley_j.png",
     house: "Hufflepuff",
   },
   {
     fullname: "Terry BOOT",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/boot_t.png",
     house: "RAVENCLAW",
   },
   {
     fullname: "zacharias smith",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/smith_z.png",
     house: "Hufflepuff",
   },
   {
     fullname: 'Ernest "Ernie" Macmillan',
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/macmillan_e.png",
     house: "hufflepuff",
   },
   {
     fullname: "megan Jones",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/jones_m.png",
     house: "Hufflepuff",
   },
   {
     fullname: "wayne hopkins",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/hopkins_w.png",
     house: "Hufflepuff",
   },
   {
     fullname: "Leanne",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: null,
     house: "hufflepuff",
   },
   {
     fullname: "Lavender brown",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/brown_l.png",
     house: "Gryffindor",
   },
   {
     fullname: "Seamus finnigan",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/finnigan_s.png",
     house: "gryffindor",
   },
   {
     fullname: "hermione jean Granger",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/granger_h.png",
     house: "Gryffindor",
   },
   {
     fullname: "neville longbottom",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/longbottom_n.png",
     house: "Gryffindor",
   },
   {
     fullname: "Parvati Patil",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/patil_parvati.png",
     house: "GRYFFINDOR",
   },
   {
     fullname: "harry James POTTER",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/potter_h.png",
     house: "GRYFFINDOR",
   },
   {
     fullname: "Dean Thomas",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/thomas_d.png",
     house: "gryffindor",
   },
   {
     fullname: "RONald Bilius weasley",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/weasley_r.png",
     house: "Gryffindor",
   },
   {
     fullname: "Mandy brocklehurst",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/brocklehurst_m.png",
     house: "Ravenclaw",
   },
   {
     fullname: "Padma Patil",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/patil_padma.png",
     house: "ravenclaw",
   },
   {
     fullname: "lisa Turpin",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/turpin_l.png",
     house: "RAVENCLAW",
   },
   {
     fullname: "Stephen Cornfoot",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/cornfoot_s.png",
     house: "Hufflepuff",
   },
   {
     fullname: "anthony goldstein",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/goldstein_a.png",
     house: "Ravenclaw",
   },
   {
     fullname: "Michael Corner",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/corner_m.png",
     house: "RAVENCLAW",
   },
   {
     fullname: "Kevin Entwistle",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/entwistle_k.png",
     house: "Ravenclaw",
   },
   {
     fullname: "Sue Li",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/li_s.png",
     house: "ravenclaw",
   },
   {
     fullname: "draco lucius Malfoy",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/malfoy_d.png",
     house: "Slytherin",
   },
   {
     fullname: "Vincent Crabbe",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/crabbe_v.png",
     house: "slytherin",
   },
   {
     fullname: "Tracey davis",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/davis_t.png",
     house: "Slytherin",
   },
   {
     fullname: "gregory Goyle",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/goyle_g.png",
     house: "Slytherin",
   },
   {
     fullname: "Millicent bulstrode",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/bulstrode_m.png",
     house: "Slytherin",
   },
   {
     fullname: "theodore Nott",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/nott_t.png",
     house: "slYtherin",
   },
   {
     fullname: "Daphne Greengrass",
     gender: "girl",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/greengrass_d.png",
     house: "Slytherin",
   },
   {
     fullname: "blaise Zabini",
     gender: "boy",
-    portrait: "./images/abbott_1-png",
+    portrait: "../images/zabini_b.png",
     house: "sLYTHERIN",
   },
 ];
@@ -373,8 +373,8 @@ for (let student of students) {
     const td = document.createElement("td");
     if (datum === student.portrait) {
       const img = document.createElement("img");
-      img.src = `images/${datum}`;
-      img.alt = `${firstName} ${lastName}'s portrait`;
+      img.src = `./images/${datum}`;
+      img.alt = `img`;
       td.appendChild(img);
     } else {
       td.textContent = datum;
@@ -431,12 +431,7 @@ function displayData(data) {
 
     // Create and add the image to the cell
     var img = document.createElement("img");
-    var imgSrc =
-      "./images/" +
-      data[i].name.toLowerCase() +
-      "_" +
-      data[i].house.toLowerCase() +
-      ".png";
+    var imgSrc = `./images/data[i]${name.toLowerCase()}_data[i].${house.toLowerCase()}.png`;
     img.src = imgSrc;
     imgCell.appendChild(img);
   }
