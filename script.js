@@ -371,7 +371,14 @@ for (let student of students) {
   ];
   for (let datum of data) {
     const td = document.createElement("td");
-    td.textContent = datum;
+    if (datum === student.portrait) {
+      const img = document.createElement("img");
+      img.src = `images/${datum}`;
+      img.alt = `${firstName} ${lastName}'s portrait`;
+      td.appendChild(img);
+    } else {
+      td.textContent = datum;
+    }
     row.appendChild(td);
   }
 
