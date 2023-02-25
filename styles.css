@@ -1,0 +1,42 @@
+@font-face {
+  font-family: myFont;
+  src: url(./fonts/Stardew_Valley.ttf);
+}
+
+html {
+  background-image: url(./background-image/stars1.gif);
+}
+h1 {
+  background-image: url(./images/long\ parchment.svg);
+  text-align: center;
+  color: brown;
+  /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
+  background-repeat: no-repeat;
+  justify-content: center;
+  margin: 1em;
+  padding: 1.5em;
+}
+
+body {
+  font-family: "myFont", sans-serif;
+  font-size: 40px;
+}
+table {
+  margin: 0 auto; /* center the table horizontally */
+  text-align: center; /* center the table content horizontally */
+  border-collapse: collapse; /* remove the default border spacing */
+  color: brown;
+}
+th,
+td {
+  padding: 10px; /* add some padding to the cells */
+  border: 1px solid white; /* add a border around the cells */
+}
+
+#table-container tr:nth-child(even) {
+  background-color: #1d045b;
+}
+
+#table-container tr:nth-child(odd) {
+  background-color: #eea960;
+}
