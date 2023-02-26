@@ -376,6 +376,11 @@ for (let student of students) {
       img.src = `./images/${datum}`;
       img.alt = `img`;
       td.appendChild(img);
+    } else if (datum === student.house) {
+      const img = document.createElement("img");
+      img.src = `./house-images/${datum}.png`; // assuming the house image file names end with ".png"
+      img.alt = `img`;
+      td.appendChild(img);
     } else {
       td.textContent = datum;
     }
