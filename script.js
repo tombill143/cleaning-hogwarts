@@ -1,3 +1,7 @@
+let settings = {
+  allStudents: [],
+  filteredStudents: [],
+};
 const students = [
   {
     fullname: "Pansy parkinson",
@@ -56,7 +60,7 @@ const students = [
   {
     fullname: "Leanne",
     gender: "girl",
-    portrait: null,
+    portrait: "../images/not-on-record.png",
     house: "hufflepuff",
   },
   {
@@ -312,7 +316,7 @@ console.log(sortedStudents);
 const capitalisedGender = capitaliseGender(students);
 console.log(capitalisedGender);
 
-console.table(students);
+//console.table(students);
 
 // create table element
 const table = document.createElement("table");
@@ -320,12 +324,12 @@ const table = document.createElement("table");
 // create header row
 const headerRow = document.createElement("tr");
 const headers = [
-  "First Name",
-  "Middle Name",
-  "Last Name",
-  "Gender",
-  "Portrait",
-  "House",
+  "first name",
+  "middle name",
+  "last name",
+  "gender",
+  "portrait",
+  "house",
 ];
 for (let header of headers) {
   const th = document.createElement("th");
@@ -361,86 +365,21 @@ for (let student of students) {
     middleName = "null";
   }
 
-  const data = [
-    firstName,
-    middleName,
-    lastName,
-    student.gender,
-    student.portrait,
-    student.house,
-  ];
-  for (let datum of data) {
-    const td = document.createElement("td");
-    if (datum === student.portrait) {
-      const img = document.createElement("img");
-      img.src = `./images/${datum}`;
-      img.alt = `img`;
-      td.appendChild(img);
-    } else if (datum === student.house) {
-      const img = document.createElement("img");
-      img.src = `./house-images/${datum}.png`; // assuming the house image file names end with ".png"
-      img.alt = `img`;
-      td.appendChild(img);
-    } else {
-      td.textContent = datum;
-    }
-    row.appendChild(td);
-  }
+  const data = {
+    firstName: firstName,
+    middleName: middleName,
+    lastName: lastName,
+    gender: student.gender,
+    portrait: student.portrait,
+    house: student.house,
+  };
 
-  row.style.backgroundColor = houseColors[student.house];
-  if (student.house === "Hufflepuff") {
-    for (let td of row.children) {
-      td.style.color = "black";
-    }
-  } else if (student.house === "Gryffindor") {
-    for (let td of row.children) {
-      td.style.color = "#F0BA2B";
-    }
-  } else if (student.house === "Slytherin") {
-    for (let td of row.children) {
-      td.style.color = "#c9c6c6";
-    }
-  } else if (student.house === "Ravenclaw") {
-    for (let td of row.children) {
-      td.style.color = "#da9d43";
-    }
-  }
-
-  table.appendChild(row);
+  settings.allStudents.push(data);
 }
 
 // append table to container element
 const container = document.getElementById("table-container");
 container.appendChild(table);
-
-function displayData(data) {
-  var table = document.getElementById("student-table");
-  table.innerHTML = "";
-
-  for (var i = 0; i < data.length; i++) {
-    // Create a new row element
-    var row = table.insertRow(i);
-
-    // Create a new cell for each data field
-    var nameCell = row.insertCell(0);
-    var houseCell = row.insertCell(1);
-    var color;
-    var imgCell = row.insertCell(5); // Add new cell for image
-
-    // Set the background color of the row
-    row.style.backgroundColor = color;
-
-    // Add the data to the cells
-    nameCell.innerHTML = data[i].name;
-    houseCell.innerHTML = data[i].house;
-
-    // Create and add the image to the cell
-    var img = document.createElement("img");
-    var imgSrc = `./images/data[i]${name.toLowerCase()}_data[i].${house.toLowerCase()}.png`;
-    img.src = imgSrc;
-    imgCell.appendChild(img);
-  }
-}
 
 // Sort the students by their first names
 students.sort((a, b) => {
@@ -454,3 +393,134 @@ students.sort((a, b) => {
   }
   return 0;
 });
+
+const tableContainer = document.getElementById("table-container");
+const filterButtons = document.querySelectorAll(".filter");
+filterButtons.forEach((button) => {
+  button.addEventListener("click", handleFilterButtonClick);
+});
+
+function filterTable(house) {
+  const tableRows = document.querySelectorAll("#table-container tr");
+  tableRows.forEach((row) => {
+    const houseCell = row.querySelector("td:nth-child(2)");
+    if (house === "*" || house === houseCell.textContent) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+  });
+}
+
+function handleFilterButtonClick(event) {
+  event.stopImmediatePropagation();
+  const house = event.target.dataset.filter;
+  console.log({ house });
+  if (house === "*") {
+    console.log("here is all my student data", students);
+    displayData(settings.allStudents);
+  } else {
+    settings.filteredStudents = filterData(settings.allStudents, house);
+    displayData(settings.filteredStudents);
+  }
+}
+
+function filterData(data, house) {
+  let filteredData = data.filter(function (student) {
+    return student.house === house;
+  });
+
+  console.log(filteredData); // add this line to check filteredData
+
+  return filteredData;
+}
+
+function displayData(studentInfo) {
+  console.log("All studenbts", settings.allStudents);
+  const table = document.createElement("table");
+  const headerRow = document.createElement("tr");
+  headers.forEach((header) => {
+    const th = document.createElement("th");
+    th.textContent = header;
+    headerRow.appendChild(th);
+  });
+  table.appendChild(headerRow);
+
+  /*const houseColors = {
+    Gryffindor: "red",
+    Hufflepuff: "yellow",
+    Ravenclaw: "blue",
+    Slytherin: "green",
+  };*/
+
+  studentInfo.forEach((student) => {
+    console.log(student);
+    const row = document.createElement("tr");
+    headers.forEach((header) => {
+      const td = document.createElement("td");
+
+      switch (header) {
+        case "first name":
+          const firstName = document.createElement("td");
+          firstName.textContent = student["firstName"];
+          td.textContent = student["firstName"];
+
+          break;
+        case "middle name":
+          const middleName = document.createElement("td");
+          middleName.textContent = student["middleName"];
+          td.textContent = student["middleName"];
+          break;
+        case "last name":
+          const lastName = document.createElement("td");
+          lastName.textContent = student["lastName"];
+          td.textContent = student["lastName"];
+          break;
+        case "gender":
+          const gender = document.createElement("td");
+          gender.textContent = student["gender"];
+          td.textContent = student["gender"];
+          break;
+        case "portrait":
+          const portraitImg = document.createElement("img");
+          portraitImg.src = `./images/${student[header]}`;
+          portraitImg.alt = `img`;
+          td.appendChild(portraitImg);
+          break;
+        case "house":
+          const houseImg = document.createElement("img");
+          houseImg.src = `./house-images/${student[header]}.png`;
+          houseImg.alt = `img`;
+          td.appendChild(houseImg);
+          break;
+      }
+      row.style.backgroundColor = houseColors[student.house];
+      if (student.house === "Hufflepuff") {
+        for (let td of row.children) {
+          td.style.color = "black";
+        }
+      } else if (student.house === "Gryffindor") {
+        for (let td of row.children) {
+          td.style.color = "#F0BA2B";
+        }
+      } else if (student.house === "Slytherin") {
+        for (let td of row.children) {
+          td.style.color = "#c9c6c6";
+        }
+      } else if (student.house === "Ravenclaw") {
+        for (let td of row.children) {
+          td.style.color = "#da9d43";
+        }
+      }
+
+      row.appendChild(td);
+    });
+    table.appendChild(row);
+  });
+
+  const container = document.getElementById("table-container");
+  container.innerHTML = "";
+  container.appendChild(table);
+}
+
+displayData(settings.allStudents);

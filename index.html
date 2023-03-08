@@ -9,8 +9,21 @@
 </head>
 <body>
     <h1>Cleaning Hogwarts Data</h1>
-    <div id="table-container"></div>
+    <div id="content">
+        <p class="filter-buttons">
+        
+          <button id= "red" class="filter" data-action="filter" data-filter="Gryffindor"><img id="red" class="filter" data-action="filter" data-filter="Gryffindor"src="./house-images/gryffindor.png" alt="gryffindor"></button>
+          <button id= "green" class="filter" data-action="filter" data-filter="Slytherin"><img id= "green" class="filter" data-action="filter" data-filter="Slytherin" src="./house-images/slytherin.png" alt="slytherin"></button>
+          <button id= "yellow" class="filter" data-action="filter" data-filter="Hufflepuff"><img id= "yellow" class="filter" data-action="filter" data-filter="Hufflepuff"src="./house-images/hufflepuff.png" alt="hufflepuff"></button>
+          <button id= "blue" class="filter" data-action="filter" data-filter="Ravenclaw"><img id= "blue" class="filter" data-action="filter" data-filter="Ravenclaw"src="./house-images/ravenclaw.png" alt="ravenclaw"></button>
+          <button id= "grey" class="filter" data-action="filter" data-filter="*"><img id= "grey" class="filter" data-action="filter" data-filter="*"src="./house-images/all-houses.png" alt="all-houses"></button>
+        </p>
+        <div id="table-container">
+            <table id="table-body"></table>
+          </div>
+      </div>
     
 </body>
 <script src="script.js"></script>
 </html>
+

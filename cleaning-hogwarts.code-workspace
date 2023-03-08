@@ -1,0 +1,11 @@
+{
+  "folders": [
+    {
+      "name": "cleaning-hogwarts",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "liveServer.settings.port": 5503
+  }
+}
