@@ -1,0 +1,117 @@
+@font-face {
+  font-family: myFont;
+  src: url(./fonts/Stardew_Valley.ttf);
+}
+
+html {
+  background-image: url(./background-image/stars1.gif);
+}
+h1 {
+  background-image: url(./background-image/long-parchment.svg);
+  text-align: center;
+  color: brown;
+  /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
+  background-repeat: no-repeat;
+  justify-content: center;
+  margin: 1em;
+  padding: 1.5em;
+}
+
+body {
+  font-family: "myFont", sans-serif;
+  font-size: 40px;
+}
+table {
+  margin: 0 auto; /* center the table horizontally */
+  text-align: center; /* center the table content horizontally */
+  border-collapse: collapse; /* remove the default border spacing */
+  color: brown;
+}
+th,
+td {
+  padding: 10px; /* add some padding to the cells */
+
+  border-style: ridge;
+}
+
+#table-container tr:nth-child(even) {
+  background-color: #1d045b;
+}
+
+#table-container tr:nth-child(odd) {
+  background-color: #eea960;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 20%;
+}
+
+button {
+  transition: background-color 0.5s ease-in-out 0.5s;
+  transition: filter 0.5s ease-in-out;
+  background: none;
+}
+
+button:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(198, 5, 198));
+  border: none;
+}
+
+#red:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(255, 51, 47));
+}
+
+#green:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(67, 244, 36));
+}
+
+#yellow:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(249, 242, 30));
+}
+
+#blue:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(82, 73, 255));
+}
+
+button#red.filter {
+  border: none;
+}
+
+button#green.filter {
+  border: none;
+}
+
+button#yellow.filter {
+  border: none;
+}
+
+button#blue.filter {
+  border: none;
+}
+
+button#grey.filter {
+  border: none;
+}
+
+.filter-buttons {
+  text-align: center;
+  border: none;
+}
+
+tr {
+  border: none;
+}
+
+#grey {
+  margin: none;
+  padding: none;
+
+  height: auto;
+  height: auto;
+}
+
+img#grey.filter {
+  width: 100%;
+}
