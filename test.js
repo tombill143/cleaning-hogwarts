@@ -1,4 +1,4 @@
-"use strict";
+("use strict");
 //------------------------------ALL THE DATA WILL GO INTO THIS ARRAY CALLED STUDENTS-------------------------
 
 let settings = {
@@ -12,6 +12,8 @@ console.log(
 //-----------------------------THIS FUNCTION DISPLAYS MY DATA-------------------------------------------------
 
 function displayUserData(userData) {
+  console.log("Here is the user data washed thoroughly:", userData);
+
   const table = document.querySelector("#table-body");
 
   // Clear existing rows from table body
@@ -19,14 +21,7 @@ function displayUserData(userData) {
 
   // create header row
   const headerRow = document.createElement("tr");
-  const headers = [
-    "First Name",
-    "Middle Name",
-    "Last Name",
-    "Gender",
-    "Portrait",
-    "House",
-  ];
+  const headers = ["First Name", "Middle Name", "Last Name", "Gender", "House"];
   for (let header of headers) {
     const th = document.createElement("th");
     th.textContent = header;
@@ -38,6 +33,7 @@ function displayUserData(userData) {
   userData.forEach((student) => {
     student.fullname = capitaliseSurname(student.fullname);
     console.log("After capitalising surname:", student.fullname);
+
     const row = document.createElement("tr");
     const fullnameWords = student.fullname.trim().split(/\s+/);
     let lastname = fullnameWords.pop();
@@ -51,27 +47,14 @@ function displayUserData(userData) {
     if (!lastname) {
       lastname = "";
     }
-    const imageSrc = student.portrait
-      ? `./images/${student.portrait}.png`
-      : "./images/not-on-record.png";
-    const img = document.createElement("img");
-    if (imageSrc !== null) {
-      img.src = imageSrc;
-      img.alt = student.fullname;
-      img.width = 100;
-    } else {
-      console.warn("No image found for student:", student.fullname);
-    }
-    const portraitCell = document.createElement("td");
-    portraitCell.appendChild(img);
+
     row.innerHTML = `
         <td>${firstname}</td>
         <td>${middlename}</td>
         <td>${lastname}</td>
         <td>${student.gender}</td>
-        <td>${portraitCell.innerHTML}</td>
         <td>${student.house}</td>
-      `;
+    `;
     table.appendChild(row);
   });
 }
@@ -81,10 +64,7 @@ fetch("https://petlatkea.dk/2021/hogwarts/students.json")
   .then((response) => response.json())
   .then((data) => {
     console.log("Here is my displayed user data that's very very dirty ", data);
-    console.log(
-      "Here is my clean data thats been washed rather thoroughly",
-      data
-    );
+    console.log("Here is my data that is still a bit stinky", data);
     const capitalisedData = capitaliseUserData(data);
     const cleanedData = tidyData(data);
     console.log(
@@ -102,6 +82,17 @@ fetch("https://petlatkea.dk/2021/hogwarts/students.json")
     );
   });
 //****************************************************SERVER POWERRRRRRRRRRRRRRRRRRRRR*********************/
+
+//----------------------------------------JSON CONTAINING THE IMAGES-----------------------------------------
+
+/*fetch("images.json")
+  .then((response) => response.json())
+  .then((data) => {
+    // do something with the data
+  })
+  .catch((error) => console.error(error));*/
+
+//---------------------------------------------------------------------------------------------------
 
 //--------------------ALL OF THIS CODE UNDERNEATH IS GOING TO MAKE MY CODE SPICK AND SPAN--------------
 function capitaliseUserData(userData) {
@@ -157,11 +148,11 @@ function capitaliseHouseName(name) {
 }
 
 function removeHyphens(name) {
-  return name.replace(/-/g, " ");
+  return name.replaceAll(/-/g, " ");
 }
 
 function removeQuotes(str) {
-  return str.replace(/"/g, "");
+  return str.replaceAll(/"/g, "");
 }
 
 function tidyData(data) {

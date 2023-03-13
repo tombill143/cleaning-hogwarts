@@ -1,0 +1,108 @@
+{
+  "images": [
+    {
+      "filename": "parkinson_p.png",
+      "label": "parkinson"
+    },
+    {
+      "filename": "abbott_h.png",
+      "label": "abbott"
+    },
+    {
+      "filename": "bones_s.png",
+      "label": "bones"
+    },
+    {
+      "filename": "fletchley_j.png",
+      "label": "fletchley"
+    },
+    {
+      "filename": "boot_t.png",
+      "label": "boot"
+    },
+    {
+      "filename": "smith_z.png",
+      "label": "smith"
+    },
+    {
+      "filename": "macmillan_e.png",
+      "label": "macmillan"
+    },
+    {
+      "filename": "jones_m.png",
+      "label": "jones"
+    },
+    {
+      "filename": "hopkins_w.png",
+      "label": "hopkins"
+    },
+    {
+      "filename": "not-on-record.png",
+      "label": "not-on-record"
+    },
+    {
+      "filename": "brown_l.png",
+      "label": "brown"
+    },
+    {
+      "filename": "finnigan_s.png",
+      "label": "finnigan"
+    },
+    {
+      "filename": "granger_h.png",
+      "label": "granger"
+    },
+    {
+      "filename": "longbottom_n.png",
+      "label": "longbottom"
+    },
+    {
+      "filename": "goldstein_a.png",
+      "label": "goldstein"
+    },
+    {
+      "filename": "corner_m.png",
+      "label": "corner"
+    },
+    {
+      "filename": "entwistle_k.png",
+      "label": "entwistle"
+    },
+    {
+      "filename": "li_s.png",
+      "label": "li"
+    },
+    {
+      "filename": "malfoy_d.png",
+      "label": "malfoy"
+    },
+    {
+      "filename": "crabbe_v.png",
+      "label": "crabbe"
+    },
+    {
+      "filename": "davis_t.png",
+      "label": "davis"
+    },
+    {
+      "filename": "goyle_g.png",
+      "label": "goyle"
+    },
+    {
+      "filename": "bulstrode_m.png",
+      "label": "bulstrode"
+    },
+    {
+      "filename": "nott_t.png",
+      "label": "nott"
+    },
+    {
+      "filename": "greengrass_d.png",
+      "label": "greengrass"
+    },
+    {
+      "filename": "zabini_b.png",
+      "label": "zabini"
+    }
+  ]
+}
