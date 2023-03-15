@@ -1,0 +1,36 @@
+body {
+  background-color: rgba(166, 0, 255, 0.663);
+}
+
+.actor {
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-color: orange;
+  border-style: groove;
+  filter: drop-shadow(30px 10px 4px #4444dd);
+  border-radius: 100px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.actor:hover {
+  background-color: orange;
+  color: black;
+}
+
+#actor-list {
+  text-align: center;
+  padding: 2em;
+  display: grid;
+  grid-gap: 0.5em;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+div.actor {
+  background-color: black;
+  color: orange;
+}
+
+p {
+  color: aquamarine;
+  display: none;
+}

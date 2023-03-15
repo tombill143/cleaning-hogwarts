@@ -1,0 +1,57 @@
+@font-face {
+  font-family: myFont;
+  src: url(./fonts/Stardew_Valley.ttf);
+}
+
+html {
+  background-image: url(./background-image/stars1.gif);
+}
+
+h1 {
+  display: flex;
+  background-image: url(./background-image/long-parchment.svg);
+  text-align: center;
+  color: brown;
+  /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
+  background-repeat: no-repeat;
+  justify-content: center;
+  margin: 4em;
+  padding: 1em;
+  font-size: 65px;
+}
+
+body {
+  font-family: "myFont", sans-serif;
+  font-size: 25px;
+}
+
+.student {
+  cursor: pointer;
+  margin-bottom: 10px;
+
+  border-radius: 1px;
+}
+
+.student:hover {
+  color: red;
+}
+
+#student-list {
+  text-align: center;
+  padding: 2em;
+  display: grid;
+  grid-gap: 0.5em;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+div.student {
+  background-image: url(./background-image/parchment.png);
+  background-repeat: no-repeat;
+  background-size: 450px;
+  color: brown;
+}
+
+p {
+  color: aquamarine;
+  display: none;
+}

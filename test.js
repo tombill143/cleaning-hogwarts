@@ -21,7 +21,14 @@ function displayUserData(userData) {
 
   // create header row
   const headerRow = document.createElement("tr");
-  const headers = ["First Name", "Middle Name", "Last Name", "Gender", "House"];
+  const headers = [
+    "First Name",
+    "Middle Name",
+    "Last Name",
+    "Gender",
+    "Portrait",
+    "House",
+  ];
   for (let header of headers) {
     const th = document.createElement("th");
     th.textContent = header;
@@ -53,8 +60,62 @@ function displayUserData(userData) {
         <td>${middlename}</td>
         <td>${lastname}</td>
         <td>${student.gender}</td>
+        <td>${student.obj}</td>
         <td>${student.house}</td>
     `;
+    table.appendChild(row);
+  });
+
+  // Create an object for each image file name
+  /*const imageFileNames = [
+    "parkinson_p.png",
+    "abbott_h.png",
+    "bones_s.png",
+    "fletchley_j.png",
+    "boot_t.png",
+    "smith_z.png",
+    "macmillan_e.png",
+    "jones_m.png",
+    "hopkins_w.png",
+    "not-on-record.png",
+    "brown_l.png",
+    "finnigan_s.png",
+    "granger_h.png",
+    "longbottom_n.png",
+    "goldstein_a.png",
+    "corner_m.png",
+    "entwistle_k.png",
+    "li_s.png",
+    "malfoy_d.png",
+    "crabbe_v.png",
+    "davis_t.png",
+    "goyle_g.png",
+    "bulstrode_m.png",
+    "nott_t.png",
+    "greengrass_d.png",
+    "zabini_b.png",
+  ];*/
+
+  /*const imageObjects = imageFileNames.map((filename) => {
+    const image = new Image();
+    image.src = `./images/${filename}`;
+    return { filename, image };
+  });*/
+
+  // Loop through the userData array and create a table row for each user
+  userData.forEach((student) => {
+    const imageObject = imageElement.find(
+      (obj) => obj.filename === student.firstname.lastname
+    );
+    const imageElement = document.createElement("img");
+    if (imageObject) {
+      imageElement.src = `./images/${student.firstname.join()}_${student.lastname
+        .charAt(0)
+        .toLowerCase()}.png`;
+    } else {
+      imageElement.src = "./images/not-on-record.png";
+    }
+
     table.appendChild(row);
   });
 }
@@ -183,6 +244,7 @@ function tidyData(data) {
       firstname,
       middlename,
       lastname,
+      portrait,
       gender: capitaliseGender(student.gender),
       house: capitaliseHouseName(student.house),
     };
