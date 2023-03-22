@@ -6,6 +6,25 @@
   </head>
   <body>
     <h1>M.E.R.L.I.N.</h1>
+    <div class="container">
+      <label for="input">Input:</label>
+      <input type="text" id="input" placeholder="Search...">
+      <label for="option">Option:</label>
+      <select id="option">
+        <option value="first-name">Make first character uppercase</option>
+        <option value="find-first-name">Find first name</option>
+        <option value="find-first-name-length">Find first name length</option>
+        <option value="find-middle-name">Find middle name</option>
+        <option value="check-file-extension">Check file extension</option>
+        <option value="hide-password">Hide password</option>
+        <option value="make-third-char-uppercase">Make third character uppercase</option>
+        <option value="make-uppercase-after-space-or-hyphen">Make uppercase after space or hyphen</option>
+      </select>
+      <button onclick="processInput()">Output</button>
+      <br>
+      <label for="output">Output:</label>
+      <textarea id="output" rows="4" cols="50" readonly></textarea>
+    </div>
     <div id="student-list"></div>
 
     <script src="experiment.js"></script>

@@ -1,6 +1,6 @@
 const studentListContainer = document.getElementById("student-list");
 
-fetch("hogwarts.json")
+fetch("https://petlatkea.dk/2021/hogwarts/students.json")
   .then((response) => response.json())
   .then((students) => {
     students.forEach((student) => {
