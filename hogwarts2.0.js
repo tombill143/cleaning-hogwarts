@@ -7,7 +7,8 @@ fetch("hogwarts.json")
       const studentElement = document.createElement("div");
       studentElement.classList.add("student");
       studentElement.innerHTML = `<h2>Name: ${capitaliseName(
-        student.fullname
+        removeHyphenFromNickname(student.fullname),
+        removeQuotationMarks(student.fullname)
       )}</h2><h2>Gender: ${capitaliseGender(
         student.gender
       )}</h2><h2>House: ${capitaliseHouse(student.house)}</h2>`;
@@ -142,13 +143,92 @@ function capitaliseHouse(house) {
 }
 
 function removeHyphenFromNickname(fullname) {
-  let output = fullname.charAt(0);
-  for (let i = 1; i < fullname.length; i++) {
-    if (fullname.charAt(i - 1) === " " || fullname.charAt(i - 1) === "-") {
-      output += fullname.charAt(i).toUpperCase();
+  let output = "";
+  let nicknameStarted = false;
+
+  for (let i = 0; i < fullname.length; i++) {
+    if (fullname.charAt(i) === "-") {
+      output += " ";
+      nicknameStarted = true;
+    } else if (nicknameStarted) {
+      output += fullname.charAt(i);
     } else {
       output += fullname.charAt(i);
     }
   }
+
   return output;
 }
+
+function removeQuotationMarks(fullname) {
+  return fullname.replace(/"/g, "");
+}
+
+//--------------------FUNCTION WHICH SETS THE TIME----------------------------------
+// Get a reference to the button elements
+const button1 = document.querySelector("#button1");
+const button2 = document.querySelector("#button2");
+
+// Create a function to update the buttons with the current time and date
+function updateButtons() {
+  // Get the current time
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = String(now.getMinutes()).padStart(2, "0"); // add leading zero if necessary
+
+  // Update the first button with the time
+  button1.textContent = `${hours}:${minutes}`;
+
+  // Get the current date
+  const day = now.getDate();
+  const month = (now.getMonth() + 1).toString().padStart(2, "0");
+  const year = now.getFullYear();
+
+  // Update the second button with the date
+  button2.textContent = `${day}/${month}/1991`;
+}
+
+// Update the buttons every second
+setInterval(updateButtons, 1000);
+
+//-----------------------------FUNCTION WHICH ENABLES THE SEARCH BAR FEATURE---------------------------------
+function search() {
+  var input, filter, table, tr, td, i, j, txtValue;
+  input = document.getElementById("input");
+  table = document.getElementById("student-list");
+  tr = table.getElementsByTagName("tr");
+
+  for (i = 0; i < tr.length; i++) {
+    for (j = 0; j < tr[i].cells.length; j++) {
+      td = tr[i].cells[j];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+          break;
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+}
+
+const handleSearch = (event) => {
+  const searchTerm = event.target.value.toLowerCase();
+  const students = document.querySelectorAll(".student");
+  students.forEach((student) => {
+    const name = student
+      .querySelector("h2:first-of-type")
+      .textContent.toLowerCase();
+    const nameWords = name.split(" ");
+    if (nameWords.some((word) => word.includes(searchTerm))) {
+      student.style.display = "block";
+    } else {
+      student.style.display = "none";
+    }
+  });
+};
+
+const searchBar = document.getElementById("input");
+searchBar.addEventListener("input", handleSearch);

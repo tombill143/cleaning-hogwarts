@@ -5,7 +5,14 @@
     <title>Hogwarts</title>
   </head>
   <body>
+    <img class="hogwarts-logo"src="./house-images/admin-logo_1-removebg-preview.png" alt="" width="100px" text-align="center">
+    <div id="wrapper">
+      
+    <div class="heading">
     <h1>M.E.R.L.I.N.</h1>
+    <h2 class="title-heading">Magical Educational Recreational Interface Network for Hogwarts School of Witchcraft & Wizardy</h2>
+  </div>
+</div>
     <div class="container">
       <label for="input">Input:</label>
       <input type="text" id="input" placeholder="Search...">
@@ -23,8 +30,28 @@
       </select>
       <button onclick="processInput()">Search</button>
       <br>
-      <label for="output">Output:</label>
-      <textarea id="output" rows="4" cols="50" readonly></textarea>
+    
+    </div>
+
+    <div class="navigation">
+      <h2 class="time">time</h2>
+      <h2 class="date">date</h2>
+      <h2 class="user">user</h2>
+      <img class="navigation-image" src="./background-image/long-parchment.svg" alt="">
+      <div class="button-container">
+        <button class="button" id="button1">time</button>
+        <button class="button" id="button2">date</button>
+        <button class="button" id="button3">hackGrid91</button>
+      </div>
+      <h2 class="expelled">expelled</h2>
+      <h2 class="blood-status">blood status</h2>
+      <h2 class="inquisitorial-squad">inquisitorial squad</h2>
+      <img class="navigation-image" src="./background-image/long-parchment.svg" alt="">
+      <div class="button-container2">
+        <button class="button" id="button4">2</button>
+        <button class="button" id="button5">Pure Blood</button>
+        <button class="button" id="button6">1991</button>
+      </div>
     </div>
     <div id="student-list"></div>
 

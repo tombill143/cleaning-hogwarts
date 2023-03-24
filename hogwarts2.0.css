@@ -3,6 +3,202 @@
   src: url(./fonts/Stardew_Valley.ttf);
 }
 
+/*CSS for the H1 and H2 in the title*/
+.title-heading {
+  font-family: myFont;
+  color: brown;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  color: brown;
+  /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
+  justify-content: center;
+  margin: 4em;
+  padding: 1em;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  font-size: 25px;
+}
+
+.hogwarts-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 5%;
+}
+
+.navigation {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+button#button1.button {
+  background-color: #a844dd;
+}
+
+button#button2.button {
+  background-color: #a844dd;
+}
+
+button#button3.button {
+  background-color: #a844dd;
+}
+
+button#button1.button:hover {
+  background-color: white;
+  color: #a844dd;
+}
+
+button#button2.button:hover {
+  background-color: white;
+  color: #a844dd;
+}
+
+button#button3.button:hover {
+  background-color: white;
+  color: #a844dd;
+}
+
+button#button4.button {
+  background-color: #a844dd;
+}
+
+button#button5.button {
+  background-color: #a844dd;
+}
+
+button#button6.button {
+  background-color: #a844dd;
+}
+
+button#button4.button:hover {
+  background-color: white;
+  color: #a844dd;
+}
+
+button#button5.button:hover {
+  background-color: white;
+  color: #a844dd;
+}
+
+button#button6.button:hover {
+  background-color: white;
+  color: #a844dd;
+}
+
+.button-container {
+  position: absolute; /* position the container absolutely */
+  top: 55%; /* align the container to the middle of the image vertically */
+  left: 30%; /* align the container to the middle of the image horizontally */
+  transform: translate(-50%, -50%); /* center the container */
+  display: flex; /* make the buttons display in a row */
+  gap: 65px; /* add some spacing between the buttons */
+  margin-top: 0.5em;
+}
+
+.button-container2 {
+  position: absolute; /* position the container absolutely */
+  top: 65%; /* align the container to the middle of the image vertically */
+  left: 70%; /* align the container to the middle of the image horizontally */
+  transform: translate(-50%, -50%); /* center the container */
+  display: flex; /* make the buttons display in a row */
+  gap: 80px; /* add some spacing between the buttons */
+}
+
+.navigation-image {
+  margin-top: 1em;
+  width: 40%;
+}
+
+#wrapper {
+  background-image: url(./background-image/long-parchment.svg);
+  background-repeat: no-repeat;
+  display: flex;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+h1 {
+  display: flex;
+
+  text-align: center;
+  color: brown;
+  /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
+  background-repeat: no-repeat;
+  justify-content: center;
+  margin: 4em;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  font-size: 75px;
+}
+
+h2 {
+  margin-right: 1em;
+  margin-left: 0.5em;
+  text-align: left;
+  font-size: 30px;
+}
+
+.time {
+  position: absolute;
+  color: #5a2d8e;
+  left: 15%;
+  top: 5%;
+  font-size: 25px;
+  margin-top: 1.2em;
+}
+
+.date {
+  position: absolute;
+  color: #5a2d8e;
+  left: 25%;
+  top: 5%;
+  font-size: 25px;
+  margin-top: 1.2em;
+}
+
+.user {
+  position: absolute;
+  color: #5a2d8e;
+  left: 38%;
+  top: 5%;
+  font-size: 25px;
+  margin-top: 1.2em;
+}
+
+.expelled {
+  position: absolute;
+  color: #5a2d8e;
+  left: 54%;
+  top: 5%;
+  font-size: 25px;
+  margin-top: 1.2em;
+}
+
+.blood-status {
+  position: absolute;
+  color: #5a2d8e;
+  left: 65%;
+  top: 5%;
+  font-size: 25px;
+  margin-top: 1.2em;
+}
+
+.inquisitorial-squad {
+  position: absolute;
+  color: #5a2d8e;
+  left: 75%;
+  top: 5%;
+  font-size: 25px;
+  margin-top: 1.2em;
+}
+
 input#input {
   font-family: myFont;
   font-size: 30px;
@@ -17,13 +213,6 @@ button {
   color: bisque;
   cursor: pointer;
   background-color: brown;
-}
-
-h2 {
-  margin-right: 1em;
-  margin-left: 0.5em;
-  text-align: left;
-  font-size: 30px;
 }
 
 button:hover {
@@ -43,8 +232,8 @@ select#option {
 }
 
 textarea#output {
-  margin-top: 4em;
-  margin-left: 0%;
+  margin-top: 1.8em;
+  margin-right: 6%;
   font-family: myFont;
   font-size: 30px;
   color: brown;
@@ -57,21 +246,6 @@ textarea#output {
 
 html {
   background-image: url(./background-image/stars1.gif);
-}
-
-h1 {
-  display: flex;
-  background-image: url(./background-image/long-parchment.svg);
-  text-align: center;
-  color: brown;
-  /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
-  background-repeat: no-repeat;
-  justify-content: center;
-  margin: 4em;
-  padding: 1em;
-  margin-bottom: 1%;
-  margin-top: 1%;
-  font-size: 65px;
 }
 
 body {
@@ -110,4 +284,12 @@ div.student {
 p {
   color: aquamarine;
   display: none;
+}
+
+.container {
+  text-align: center;
+}
+
+#button4 {
+  padding: 0px 20px;
 }
