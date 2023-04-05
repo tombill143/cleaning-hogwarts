@@ -3,6 +3,13 @@
   src: url(./fonts/Stardew_Valley.ttf);
 }
 
+.heading {
+  padding-bottom: none;
+  background-image: url(./background-image/long-parchment.svg);
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
 /*CSS for the H1 and H2 in the title*/
 .title-heading {
   font-family: myFont;
@@ -16,8 +23,8 @@
   /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
   justify-content: center;
   margin: 4em;
-  padding: 1em;
-  margin-bottom: 1%;
+  padding: 0.1em;
+  margin-bottom: 10%;
   margin-top: 1%;
   font-size: 25px;
 }
@@ -115,7 +122,6 @@ button#button6.button:hover {
 }
 
 #wrapper {
-  background-image: url(./background-image/long-parchment.svg);
   background-repeat: no-repeat;
   display: flex;
   text-align: center;
@@ -126,16 +132,15 @@ button#button6.button:hover {
 
 h1 {
   display: flex;
-
   text-align: center;
   color: brown;
   /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
   background-repeat: no-repeat;
   justify-content: center;
   margin: 4em;
-  margin-bottom: 1%;
-  margin-top: 1%;
-  font-size: 75px;
+  margin-bottom: 0%;
+  margin-top: 0%;
+  font-size: 70px;
 }
 
 h2 {
@@ -205,6 +210,7 @@ input#input {
   color: brown;
   border: solid purple;
   background-color: bisque;
+  cursor: url(http://www.rw-designer.com/cursor-extern.php?id=152389), auto;
 }
 
 button {
@@ -221,14 +227,16 @@ button:hover {
   color: brown;
   cursor: pointer;
   background-color: bisque;
+  cursor: url(http://www.rw-designer.com/cursor-extern.php?id=152389), auto;
 }
 
 select#option {
   font-family: myFont;
   font-size: 30px;
   color: brown;
-  border: solid purple;
+  border: solid rgb(25, 0, 25);
   background-color: bisque;
+  cursor: url(http://www.rw-designer.com/cursor-extern.php?id=152389), auto;
 }
 
 textarea#output {
@@ -251,6 +259,7 @@ html {
 body {
   font-family: "myFont", sans-serif;
   font-size: 25px;
+  cursor: url(http://www.rw-designer.com/cursor-extern.php?id=152330), auto;
 }
 
 .student {
@@ -263,6 +272,7 @@ body {
 .student:hover {
   color: red;
   filter: drop-shadow(15px 10px 4px #a844dd);
+  cursor: url(http://www.rw-designer.com/cursor-extern.php?id=152330), auto;
 }
 
 #student-list {
@@ -292,4 +302,37 @@ p {
 
 #button4 {
   padding: 0px 20px;
+}
+
+#not-found {
+  display: none;
+}
+
+option:nth-child(1):hover {
+  background-color: #a844dd;
+  color: white;
+}
+
+option:nth-child(2):hover {
+  background-color: #740001;
+  color: #eeba30;
+}
+
+option:nth-child(3):hover {
+  background-color: #1a472a;
+  color: #dfd1d1;
+}
+
+option:nth-child(4):hover {
+  background-color: #eeb939;
+  color: #372e29;
+}
+
+option:nth-child(5):hover {
+  background-color: #222f5b;
+  color: #e69824;
+}
+
+select {
+  overflow: hidden;
 }

@@ -173,16 +173,24 @@ const button2 = document.querySelector("#button2");
 function updateButtons() {
   // Get the current time
   const now = new Date();
-  const hours = now.getHours();
+  const hours = String(now.getHours()).padStart(2, "0"); // add leading zero if necessary
   const minutes = String(now.getMinutes()).padStart(2, "0"); // add leading zero if necessary
+  let suffix = "";
 
-  // Update the first button with the time
-  button1.textContent = `${hours}:${minutes}`;
+  // Determine whether it's morning or afternoon
+  if (hours < 12) {
+    suffix = "am";
+  } else {
+    suffix = "pm";
+    hours -= 12;
+  }
+
+  // Update the first button with the time and suffix
+  button1.textContent = `${hours}:${minutes}${suffix}`;
 
   // Get the current date
-  const day = now.getDate();
+  const day = String(now.getDate()).padStart(2, "0");
   const month = (now.getMonth() + 1).toString().padStart(2, "0");
-  const year = now.getFullYear();
 
   // Update the second button with the date
   button2.textContent = `${day}/${month}/1991`;
