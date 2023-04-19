@@ -6,13 +6,19 @@ fetch("hogwarts.json")
     students.forEach((student) => {
       const studentElement = document.createElement("div");
       studentElement.classList.add("student");
+      const imgSrc =
+        "C:Users\tombiOneDriveDesktopITKEA MMD\3rd Semestercleaner-hogwartsimages" +
+        student.fullname.toLowerCase().replace(/\s+/g, "-") +
+        ".png";
       studentElement.innerHTML = `<h2>Name: ${capitaliseName(
-        removeHyphenFromNickname(student.fullname),
+        removeHyphenFromName(student.fullname),
         removeQuotationMarks(student.fullname)
-      )}</h2><h2>Gender: ${capitaliseGender(
+      )}</h2><img src="${imgSrc}" alt="${
+        student.fullname
+      }"><h2>Gender: ${capitaliseGender(
         student.gender
       )}</h2><h2>House: ${capitaliseHouse(student.house)}</h2>`;
-
+      console.log(`here are the student images${imgSrc}`);
       studentElement.addEventListener("click", () => {
         alert(
           `name: ${student.fullname}\n house:  ${student.house} \ngender: ${student.gender}`
@@ -91,8 +97,8 @@ function checkFileExtension(input) {
   let output = "";
   if (input.endsWith(".png")) {
     output = "File extension is .png";
-  } else if (input.endsWith(".jpg")) {
-    output = "File extension is .jpg";
+  } else if (input.endsWith(".png")) {
+    output = "File extension is .png";
   } else {
     output = "File extension is not supported";
   }
@@ -142,7 +148,7 @@ function capitaliseHouse(house) {
     .join(" ");
 }
 
-function removeHyphenFromNickname(fullname) {
+function removeHyphenFromName(fullname) {
   let output = "";
   let nicknameStarted = false;
 
@@ -161,7 +167,8 @@ function removeHyphenFromNickname(fullname) {
 }
 
 function removeQuotationMarks(fullname) {
-  return fullname.replace(/"/g, "");
+  let result = fullname.replace(/["\\]/g, "");
+  return result;
 }
 
 //--------------------FUNCTION WHICH SETS THE TIME----------------------------------
