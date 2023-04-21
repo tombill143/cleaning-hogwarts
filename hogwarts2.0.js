@@ -7,18 +7,15 @@ fetch("hogwarts.json")
       const studentElement = document.createElement("div");
       studentElement.classList.add("student");
       const imgSrc =
-        "C:Users\tombiOneDriveDesktopITKEA MMD\3rd Semestercleaner-hogwartsimages" +
+        "https://example.com/images/" +
         student.fullname.toLowerCase().replace(/\s+/g, "-") +
         ".png";
       studentElement.innerHTML = `<h2>Name: ${capitaliseName(
-        removeHyphenFromName(student.fullname),
         removeQuotationMarks(student.fullname)
-      )}</h2><img src="${imgSrc}" alt="${
-        student.fullname
-      }"><h2>Gender: ${capitaliseGender(
+      )}</h2><h2>Gender: ${capitaliseGender(
         student.gender
       )}</h2><h2>House: ${capitaliseHouse(student.house)}</h2>`;
-      console.log(`here are the student images${imgSrc}`);
+      console.log(`here are the student images ${imgSrc}`);
       studentElement.addEventListener("click", () => {
         alert(
           `name: ${student.fullname}\n house:  ${student.house} \ngender: ${student.gender}`
