@@ -11,7 +11,7 @@ fetch("hogwarts.json")
         student.fullname.toLowerCase().replace(/\s+/g, "-") +
         ".png";
       studentElement.innerHTML = `<h2>Name: ${capitaliseName(
-        removeQuotationMarks(student.fullname)
+        removeQuotationMarks(removeHyphenFromName(student.fullname))
       )}</h2><h2>Gender: ${capitaliseGender(
         student.gender
       )}</h2><h2>House: ${capitaliseHouse(student.house)}</h2>`;
@@ -244,3 +244,33 @@ const handleSearch = (event) => {
 
 const searchBar = document.getElementById("input");
 searchBar.addEventListener("input", handleSearch);
+
+function capitalizeAfterSpaceHyphen(input) {
+  let output = input.charAt(0);
+  for (let i = 1; i < input.length; i++) {
+    if (input.charAt(i - 1) === " " || input.charAt(i - 1) === "-") {
+      output += input.charAt(i).toUpperCase();
+    } else {
+      output += input.charAt(i);
+    }
+  }
+  return output;
+}
+
+function removeHyphenFromName(fullname) {
+  let output = "";
+  let nicknameStarted = false;
+
+  for (let i = 0; i < fullname.length; i++) {
+    if (fullname.charAt(i) === "-") {
+      output += " ";
+      nicknameStarted = true;
+    } else if (nicknameStarted) {
+      output += fullname.charAt(i);
+    } else {
+      output += fullname.charAt(i);
+    }
+  }
+
+  return output;
+}
